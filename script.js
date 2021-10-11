@@ -300,7 +300,6 @@ let milliseconds = 5000;
 const timerDelay = 1000;
 
 const timerDisplay = document.createElement('div');
-timerDisplay.innerText = "Time Left: " + milliseconds;
 document.body.appendChild(timerDisplay);
 
 const resetTimer = 
@@ -310,29 +309,69 @@ setInterval(() => {
 
 
  if (milliseconds <= 0){
-    location.reload();
+   timerDisplay.innerText = "Time Is Up, Restarting in 3 Seconds";
+    setTimeout(() => {location.reload();}, 3000);
  }
 
- milliseconds -= 1;
+ milliseconds -= 1000;
     }, timerDelay);
 
 
-// let milliseconds = 0;
-// const delayInMilliseconds = 1;
 
-// const output = document.createElement('div');
-// output.innerText = milliseconds;
-// document.body.appendChild(output);
 
-// const ref = setInterval(() => {
-//   output.innerText = milliseconds;
 
-//   if (milliseconds <= 0) {
+
+
+// let timerMode = "default"
+// let milliseconds = 5000;
+// const timerDelay = 1000;
+
+//LAP
+// const lapDataSquare = document.createElement('div')
+// document.body.appendChild(lapDataSquare);
+
+//TIMER
+// const timerDisplay = document.createElement('div');
+// document.body.appendChild(timerDisplay);
+
+//BUTTONS
+const startButton = document.createElement('button')
+startButton.innerText = "Start"
+// startButton.addEventListener ('click', () => {})
+document.body.appendChild(startButton);
+
+const stopButton = document.createElement('button')
+stopButton.innerText = "Stop"
+// stopButton.addEventListener ('click', () => {})
+document.body.appendChild(stopButton);
+
+const resetButton = document.createElement('button')
+resetButton.innerText = "Reset"
+// resetButton.addEventListener ('click', () => {})
+document.body.appendChild(resetButton);
+
+const lapButton = document.createElement('button')
+lapButton.innerText = "Lap"
+// lapButton.addEventListener ('click', () => {})
+document.body.appendChild(lapButton);
+
+// LOGIC
+// let milliseconds = 5000;
+// const timerDelay = 1000;
+
+// const resetTimer = setInterval(() => {
+//   timerDisplay.innerText = "Time Left: " + milliseconds;
+
+//  if (milliseconds <= 0){
+//    timerDisplay.innerText = "Time Is Up, Restarting in 3 Seconds";
+//     setTimeout(() => {location.reload();}, 3000);
+//  }
+
+//  if (timerMode === "reset"){
 //     clearInterval(ref);
-//   }
-
-//   milliseconds -= 1;
-// }, delayInMilliseconds);
-
-
-
+//  }
+//  if (timerMode === "stop"){
+//     timerDisplay.innerText = "Time Left: " + milliseconds;   
+//  }
+//  milliseconds -= 1000;
+//     }, timerDelay);
